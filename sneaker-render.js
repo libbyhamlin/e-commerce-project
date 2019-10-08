@@ -15,6 +15,10 @@ function sneakerRender(sneakers) {
     const p1 = document.createElement('p');
     p1.textContent = 'Price: ' + sneakers.price.toFixed(2);
     div.appendChild(p1);
+    const button = document.createElement('button');
+    button.textContent = 'Add To Cart';
+    button.value = sneakers.id;
+    div.appendChild(button);
 
     return li;
 }

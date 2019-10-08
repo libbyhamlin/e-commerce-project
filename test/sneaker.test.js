@@ -11,11 +11,11 @@ test('Time to render Sneaker function', assert => {
         description: 'Air Jordan VIII Cement Black',
         category: 'collectors-shoes',
         class: 'jordans',
-        price: 500.00
+        price: 500.0
     };
 
     const expected =
-    '<li class="collectors-shoes" title="Air Jordan VIII Cement Black"><div class="jordans"><p id="air-Jordan-8">Air Jordan VIII</p><img src="Air-Jordan-VIII-Aqua.jpg"><p>Price: 500.00</p></div></li>';
+    '<li class="collectors-shoes" title="Air Jordan VIII Cement Black"><div class="jordans"><p id="air-Jordan-8">Air Jordan VIII</p><img src="Air-Jordan-VIII-Aqua.jpg"><p>Price: 500.00</p><button value="air-Jordan-8">Add To Cart</button></div></li>';
 
     const dom = renderSneaker(airJordan8);
     const html = dom.outerHTML;
