@@ -3,7 +3,7 @@ import renderSneaker from '../sneaker-render.js';
 
 const test = QUnit.test;
 
-test('Time to render Sneaker function', function(assert) {
+test('Time to render Sneaker function', assert => {
     const airJordan3 = {
         id: 'airJordan3',
         name: 'Air-Jordan-III-Black-Cement.jpg',
