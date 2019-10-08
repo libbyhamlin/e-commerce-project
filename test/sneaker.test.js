@@ -11,7 +11,7 @@ test('Time to render Sneaker function', assert => {
         description: 'Air Jordan VIII Cement Black',
         category: 'collectors-shoes',
         class: 'jordans',
-        price: 500.0
+        price: 500.00
     };
 
     const expected =

@@ -10,11 +10,11 @@ function sneakerRender(sneakers) {
     div.appendChild(p);
     p.textContent = sneakers.name;
     const img = document.createElement('img');
-    img.src = 'Air-Jordan-VIII-Aqua.jpg' + sneakers.img;
-    li.appendChild(img);
+    img.src = sneakers.image;
+    div.appendChild(img);
     const p1 = document.createElement('p');
-    p1.textContent = sneakers.price;
-    li.appendChild(div);
+    p1.textContent = 'Price: ' + sneakers.price.toFixed(2);
+    div.appendChild(p1);
 
     return li;
 }
