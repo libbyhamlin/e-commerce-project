@@ -24,7 +24,6 @@ function sneakerRender(sneakers) {
     button.textContent = 'Add To Cart';
     button.value = sneakers.id;
     div.appendChild(button);
-    
 
     return li;
 }
