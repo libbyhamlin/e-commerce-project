@@ -1,4 +1,5 @@
-import renderSneaker from '../products/products.js';
+import renderSneaker from '../products/render-sneaker.js';
+import { renderTableRow } from '../shopping-cart/renderTableRow.js';
 
 const test = QUnit.test;
 
@@ -22,15 +23,17 @@ test('Time to render Sneaker function', assert => {
     assert.equal(html, expected);
 });
 
-// test('Render table row function', assert => {
-// const productOrder = [{
-//     id: 'airJordan8',
-//     quantity: 2
-// }];
+test('Render table row function', assert => {
+    const productOrder = [
+        {
+            id: 'airJordan8',
+            quantity: 2
+        }
+    ];
 
-// const expected = '<tr><td>apple</td><td>4</td><td>1.00</td><td>4.00</td></tr>';
+    const expected =
+    '<tr><td>Air Jordan 8</td><td>2</td><td>500.00</td><td>1000.00</td></tr>';
 
-// //act
-// const productElementTr = renderTableRow(airJordan8, productOrder)
-
-// export default cart;
+  //act
+    const productElementTr = renderTableRow(airJordan8, productOrder);
+});

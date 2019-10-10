@@ -1,76 +1,31 @@
+import { makePrettyCurrency } from '../shopping-cart/utils.js';
 
-// import { makePrettyCurrency } from './utils.js';
+//making a funciton bc of all the repetition below
+const makeTd = content => {
+    const tdElement = document.createElement('td');
+    tdElement.textContent = content;
 
-// //making a funciton bc of all the repetition below
-// const makeTd = (content) => {
-//     const tdElement = document.createElement('td');
-// columnThree.textContent = 'content';
-// }
+    return tdElement;
+};
 
-// //wrote new function for currency after
-// const makePrettyCurrency = (number) =>
-// number.toLocaleString('en-US' ,
-// {
-//     style: 'currency'
+export default (sneakers, order) => {
+    const tableRow = document.createElement('tr');
 
-// })
+    const totalPrice = order.quantity * sneakers.price;
+    const prettyPrice = makePrettyCurrency(sneakers.price);
+    const prettyTotal = makePrettyCurrency(totalPrice);
 
-// //refactored
-// export default (fruit, order) => {
-//     const tableRow = document.createElement('tr');
+    const columnOne = makeTd(sneakers.name);
+    const columnTwo = makeTd(order.quantity);
+    const columnThree = makeTd(prettyPrice);
+    const columnFour = makeTd(prettyTotal);
 
-//     const columnOne = makeTd('fruit.name');
-//     const columnTwo = makeTd('order.quantity');
-//     const columnThree = makeTd(fruit.price);
-//     const prettyPrice = order.price.toLocaleString({
-//         ( 'en-USD', { 
-//             style: ‘currency’, 
-//             currency: ‘USD’
-//     })
+    tableRow.appendChild(columnOne);
+    tableRow.appendChild(columnTwo);
+    tableRow.appendChild(columnThree);
+    tableRow.appendChild(columnFour);
 
-//     const totalPrice = order.quantity * fruit.price;
-//     const prettyTotal = makePrettyCurrency.toLocaleString
-//     ( 'en-USD', { 
-//         style: ‘currency’, 
-//         currency: ‘USD’
-// });
-    
-//     const columnfour = makeTd('');
+    return tableRow;
+};
 
-//     tableRow.appendChild(columnOne);
-//     tableRow.appendChild(columnTwo);
-//     tableRow.appendChild(columnthree);
-//     tableRow.appendChild(columnOne);
-
-// const columnOne = document.createElement('td');
-// columnOne.textContent = 'apple';
-// const columnOne = document.createElement('td');
-// columnOne.textContent = '4';
-// const columnTwo = document.createElement('td');
-// columnTwo.textContent = '1.00';
-// const columnThree = document.createElement('td');
-// columnThree.textContent = '4.00';
-
-// // //write this first
-// // const tableRow = document.createElement('tr');
-// // const columnOne = document.createElement('td');
-// // columnOne.textContent = 'apple';
-// // const columnOne = document.createElement('td');
-// // columnOne.textContent = '4';
-// // const columnTwo = document.createElement('td');
-// // columnTwo.textContent = '1.00';
-// // const columnThree = document.createElement('td');
-// // columnThree.textContent = '4.00';
-
-
-// return {
-//     outerHTML: 'someString' {}
-
-// }
-
-
-
-
-// export const cartTotal = (fruits, cart) => {
-
-// }
+// export default (sneakers, order)

@@ -1,5 +1,5 @@
-import { makePrettyCurrency } from '../'
-import { cart}
-
-const totalProductPrice = (fruit, quantity) =>
-fruit.price * quantity;
+export const makePrettyCurrency = number =>
+    number.toLocaleString('en-US', {
+        style: 'currency',
+        currency: 'USD'
+    });
