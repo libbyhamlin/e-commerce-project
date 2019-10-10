@@ -1,9 +1,4 @@
-import sneakerRender from '../products/sneaker-render.js';
-
-// IMPORT MODULES under test here:
-// import sneakerRender from '../products/sneaker-render.js';
-// import renderTableRow from '../shopping-cart/renderTableRow.js';
-// import { cartData }
+import renderSneaker from '../products/products.js';
 
 const test = QUnit.test;
 
@@ -21,7 +16,7 @@ test('Time to render Sneaker function', assert => {
     const expected =
     '<li class="collectors-shoes" title="Air Jordan VIII Cement Black"><div class="jordans"><p id="air-Jordan-8">Air Jordan VIII</p><img src="Air-Jordan-VIII-Aqua.jpg"><p>Price: 500.00</p><button value="air-Jordan-8">Add To Cart</button></div></li>';
 
-    const dom = sneakerRender(airJordan8);
+    const dom = renderSneaker(airJordan8);
     const html = dom.outerHTML;
 
     assert.equal(html, expected);

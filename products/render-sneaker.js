@@ -1,4 +1,4 @@
-function sneakerRender(sneakers) {
+function renderSneaker(sneakers) {
     const li = document.createElement('li');
     li.className = sneakers.category;
 
@@ -28,4 +28,4 @@ function sneakerRender(sneakers) {
     return li;
 }
 
-export default sneakerRender;
+export default renderSneaker;
