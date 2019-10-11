@@ -1,4 +1,4 @@
-import { makePrettyCurrency } from '../shopping-cart/utils.js';
+import { makePrettyCurrency } from '../common/utils.js';
 
 //making a funciton bc of all the repetition below
 const makeTd = content => {

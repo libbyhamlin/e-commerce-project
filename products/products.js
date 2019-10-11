@@ -1,4 +1,4 @@
-import sneakers from '../sneakerData.js';
+import sneakers from '../data/sneakerData.js/index.js';
 import renderSneaker from './render-sneaker.js';
 
 const list = document.getElementById('sneakers');
