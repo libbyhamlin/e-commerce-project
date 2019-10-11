@@ -1,5 +1,5 @@
 import renderSneaker from '../products/render-sneaker.js';
-import { renderTableRow } from '../shopping-cart/renderTableRow.js';
+import renderTableRow from '../shopping-cart/renderTableRow.js';
 
 const test = QUnit.test;
 
@@ -24,16 +24,22 @@ test('Time to render Sneaker function', assert => {
 });
 
 test('Render table row function', assert => {
-    const productOrder = [
+    const sneakerOrder = [
         {
             id: 'airJordan8',
-            quantity: 2
+            quantity: 2,
+            price: 500.0,
+            total: 1000.00
         }
     ];
 
     const expected =
     '<tr><td>Air Jordan 8</td><td>2</td><td>500.00</td><td>1000.00</td></tr>';
 
-  //act
-    const productElementTr = renderTableRow(airJordan8, productOrder);
+    // act
+    const sneakerElementTr = renderTableRow(sneakerOrder);
+    const html = sneakerElementTr.outerHTML;
+
+    // assert
+    assert.equal(html, expected);
 });

@@ -28,4 +28,3 @@ export default (sneakers, order) => {
     return tableRow;
 };
 
-// export default (sneakers, order)
