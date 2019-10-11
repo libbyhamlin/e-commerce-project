@@ -1,4 +1,5 @@
-import { toUSD } from '../common/utils.js';
+import { calcLineTotal } from '../register.js';
+import { toUSD } from '../formats.js';
 
 function renderLineItem(lineItem, sneakers) {
     const tr = document.createElement('tr');

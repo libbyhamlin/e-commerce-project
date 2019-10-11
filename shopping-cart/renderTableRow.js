@@ -27,4 +27,3 @@ export default (sneakers, order) => {
 
     return tableRow;
 };
-

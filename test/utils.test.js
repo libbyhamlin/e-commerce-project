@@ -1,4 +1,4 @@
-import sneakers from '../data/sneakerData';
+import sneakers from '../data/sneakerData.js';
 import cart from '../data/cart.js';
 import { findById, calcLineTotal, calcOrderTotal } from '../common/utils.js';
 const test = QUnit.test;
@@ -11,7 +11,7 @@ test('find product by id', assert => {
     const expected = 'Blueberry';
 
   // act
-    const foundSneaker = findById(Sneakers, id);
+    const foundSneaker = findById(sneakers, id);
 
   // assert
     assert.ok(foundSneaker);
@@ -49,7 +49,7 @@ test('calculate order total', assert => {
     const expected = 22.3;
 
   // act
-    const orderTotal = calcOrderTotal(cart, Sneakers);
+    const orderTotal = calcOrderTotal(cart, sneakers);
 
   // assert
     assert.equal(orderTotal, expected);

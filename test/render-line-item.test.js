@@ -1,25 +1,25 @@
-import sneakers from '../data/sneakerData';
-import { findById } from '../common/utils.js';
-import renderLineItem from '../shopping-cart/render-line-item.js';
+import sneakers from "../data/sneakerData.js";
+import { findById } from "../common/utils.js";
+import renderLineItem from "../shopping-cart/render-line-item.js";
 
 const test = QUnit.test;
 
-QUnit.module('Render Line Item');
+QUnit.module("Render Line Item");
 
-test('renders a line item', assert => {
+test("renders a line item", assert => {
   // arrange
-    const lineItem = {
-        id: 'apple',
-        quantity: 3
-    };
-    const apple = findById(fruits, lineItem.id);
-    const expected =
-    '<tr><td class="align-left">Red Apple</td><td>3</td><td>$1.00</td><td class="line-item-total">$3.00</td></tr>';
+  const airJordan8 = {
+    id: "airJordan8",
+    quantity: 3
+  };
+  const airJordan8 = findById(sneakers, lineItem.id);
+  const expected =
+    '<tr><td class="align-left">Sneaker</td><td>3</td><td>$500.00</td><td class="line-item-total">$1500.00</td></tr>';
 
   // act
-    const dom = renderLineItem(lineItem, apple);
-    const html = dom.outerHTML;
+  const dom = renderLineItem(lineItem, "airJordan8");
+  const html = dom.outerHTML;
 
   // assert
-    assert.equal(html, expected);
+  assert.equal(html, expected);
 });
