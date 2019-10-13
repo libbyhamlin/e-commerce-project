@@ -26,7 +26,7 @@ const airJordan7 = {
 };
 
 const airJordan8 = {
-    id: 'air-jordan-8',
+    id: 'airJordan8',
     name: 'Air Jordan VIII',
     image: '../assets/Air-Jordan-VIII-Aqua.jpg',
     description: 'Air Jordan VIII',
@@ -62,30 +62,3 @@ const sneakers = [
 ];
 
 export default sneakers;
-
-export const cart = [
-    {
-        id: 'airJordan3',
-        quantity: 2
-    },
-    {
-        id: 'airJordan6',
-        quantity: 5
-    },
-    {
-        id: 'airJordan7',
-        quantity: 1
-    },
-    {
-        id: 'air-jordan-8',
-        quantity: 10
-    },
-    {
-        id: 'airJordan11',
-        quantity: 2
-    },
-    {
-        id: 'irJordan13',
-        quantity: 2
-    }
-];

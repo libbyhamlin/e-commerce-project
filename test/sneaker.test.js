@@ -24,20 +24,27 @@ test('Time to render Sneaker function', assert => {
 });
 
 test('Render table row function', assert => {
-    const sneakerOrder = [
+    const cartItem =
         {
             id: 'airJordan8',
             quantity: 2,
-            price: 500.0,
-            total: 1000.00
-        }
-    ];
+            
+        };
+
+    const airJordan8 = {
+        id: 'air-jordan-8',
+        name: 'Air Jordan VIII',
+        image: '../assets/Air-Jordan-VIII-Aqua.jpg',
+        description: 'Air Jordan VIII',
+        category: 'Collectors Shoes',
+        price: 500.0
+    };
 
     const expected =
-    '<tr><td>Air Jordan 8</td><td>2</td><td>500.00</td><td>1000.00</td></tr>';
+    '<tr><td>Air Jordan VIII</td><td>2</td><td>$500.00</td><td>$1,000.00</td></tr>';
 
     // act
-    const sneakerElementTr = renderTableRow(sneakerOrder);
+    const sneakerElementTr = renderTableRow(airJordan8, cartItem);
     const html = sneakerElementTr.outerHTML;
 
     // assert

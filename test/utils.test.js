@@ -7,8 +7,8 @@ QUnit.module('Utilities');
 
 test('find product by id', assert => {
   // arrange
-    const id = 'blueberry';
-    const expected = 'Blueberry';
+    const id = 'airJordan3';
+    const expected = 'Air-Jordan-III-Black-Cement';
 
   // act
     const foundSneaker = findById(sneakers, id);
@@ -46,7 +46,7 @@ test('calculate line total', assert => {
 // This one can be left to students to do...
 test('calculate order total', assert => {
   // arrange
-    const expected = 22.3;
+    const expected = 2000.0;
 
   // act
     const orderTotal = calcOrderTotal(cart, sneakers);

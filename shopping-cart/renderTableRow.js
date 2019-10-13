@@ -8,15 +8,15 @@ const makeTd = content => {
     return tdElement;
 };
 
-export default (sneakers, order) => {
+export default function renderTableRow(sneaker, cartObject) {
     const tableRow = document.createElement('tr');
 
-    const totalPrice = order.quantity * sneakers.price;
-    const prettyPrice = makePrettyCurrency(sneakers.price);
+    const totalPrice = cartObject.quantity * sneaker.price;
+    const prettyPrice = makePrettyCurrency(sneaker.price);
     const prettyTotal = makePrettyCurrency(totalPrice);
 
-    const columnOne = makeTd(sneakers.name);
-    const columnTwo = makeTd(order.quantity);
+    const columnOne = makeTd(sneaker.name);
+    const columnTwo = makeTd(cartObject.quantity);
     const columnThree = makeTd(prettyPrice);
     const columnFour = makeTd(prettyTotal);
 
