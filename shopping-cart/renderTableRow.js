@@ -26,4 +26,4 @@ export default function renderTableRow(sneaker, cartObject) {
     tableRow.appendChild(columnFour);
 
     return tableRow;
-};
+}
