@@ -22,7 +22,7 @@ const getCartTotal = (cart, sneakers) => {
     let cartTotal = 0;
     cart.forEach(order => {
         const orderSneaker = getById(order.id, sneakers);
-        const lineTotal = getLineTotal(order, orderSneakers);
+        const lineTotal = getLineTotal(order, orderSneaker);
 
         cartTotal = cartTotal + lineTotal;
     });
