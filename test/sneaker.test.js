@@ -1,5 +1,5 @@
-// IMPORT MODULES under test here:
-import renderSneaker from '../sneaker-render.js';
+import renderSneaker from '../products/render-sneaker.js';
+import renderTableRow from '../shopping-cart/renderTableRow.js';
 
 const test = QUnit.test;
 
@@ -20,5 +20,33 @@ test('Time to render Sneaker function', assert => {
     const dom = renderSneaker(airJordan8);
     const html = dom.outerHTML;
 
+    assert.equal(html, expected);
+});
+
+test('Render table row function', assert => {
+    const cartItem =
+        {
+            id: 'airJordan8',
+            quantity: 2,
+            
+        };
+
+    const airJordan8 = {
+        id: 'air-jordan-8',
+        name: 'Air Jordan VIII',
+        image: '../assets/Air-Jordan-VIII-Aqua.jpg',
+        description: 'Air Jordan VIII',
+        category: 'Collectors Shoes',
+        price: 500.0
+    };
+
+    const expected =
+    '<tr><td>Air Jordan VIII</td><td>2</td><td>$500.00</td><td>$1,000.00</td></tr>';
+
+    // act
+    const sneakerElementTr = renderTableRow(airJordan8, cartItem);
+    const html = sneakerElementTr.outerHTML;
+
+    // assert
     assert.equal(html, expected);
 });
