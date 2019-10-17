@@ -1,3 +1,6 @@
+import { findById } from '../common/utils.js';
+import { toUSD } from '../common/utils.js';
+
 function renderSneaker(sneakers) {
     const li = document.createElement('li');
     li.className = sneakers.category;
@@ -18,11 +21,40 @@ function renderSneaker(sneakers) {
 
     const p1 = document.createElement('p');
     p1.textContent = 'Price: ' + sneakers.price.toFixed(2);
+    p.textContent = toUSD(sneakers.price);
     div.appendChild(p1);
 
     const button = document.createElement('button');
     button.textContent = 'Add To Cart';
     button.value = sneakers.id;
+    button.addEventListener('click', () => {
+        let json = localStorage.getItem('CART');
+        let cart;
+        if (json) {
+            cart = JSON.parse(json);
+        } else {
+            cart = [];
+        }
+
+        let lineItem = findById(cart, sneakers.id);
+
+        if (!lineItem) {
+            lineItem = {
+                id: sneakers.id,
+                quantity: 1
+            };
+
+            cart.push(lineItem);
+        } else {
+            lineItem.quantity++;
+        }
+
+        json = JSON.stringify(cart);
+        localStorage.setItem('CART', json);
+
+        alert('1 ' + sneakers.name + ' added to cart');
+    });
+
     div.appendChild(button);
 
     return li;

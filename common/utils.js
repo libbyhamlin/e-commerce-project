@@ -4,7 +4,7 @@ export function findById(sneakers, id) {
         const item = sneakers[i];
 
     // check the id against item.id
-        if (item.id === id) {
+        if (sneakers.id === id) {
             return item;
         }
     }
