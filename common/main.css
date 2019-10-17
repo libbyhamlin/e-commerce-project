@@ -1,11 +1,14 @@
-@import url("https://fonts.googleapis.com/css?family=Heebo|Oswald");
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap");
 
 * {
   box-sizing: border-box;
 }
 
+/* p font
+"Titillium Web", sans-serif; */
 body {
-  font-family: "Heebo", sans-serif;
+  /* Header font */
+  font-family: "IBM Plex Mono", monospace;
   background: #eee;
   margin: 0;
 }

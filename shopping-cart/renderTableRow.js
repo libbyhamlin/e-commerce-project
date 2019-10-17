@@ -1,76 +1,29 @@
-export default () =>
-import { makePrettyCurrency } from './utils.js';
+import { makePrettyCurrency } from '../common/utils.js';
 
 //making a funciton bc of all the repetition below
-const makeTd (content) => {
+const makeTd = content => {
     const tdElement = document.createElement('td');
-columnThree.textContent = 'content';
-}
+    tdElement.textContent = content;
 
-//wrote new function for currency after
-const makePrettyCurrency = (number) =>
-number.toLocaleString('en-US' ,
-{
-    style: 'currency'
+    return tdElement;
+};
 
-})
-
-//refactored
-export default (fruit, order) => {
+export default function renderTableRow(sneaker, cartObject) {
     const tableRow = document.createElement('tr');
 
-    const columnOne = makeTd('fruit.name');
-    const columnTwo = makeTd('order.quantity');
-    const columnThree = makeTd(fruit.price);
-    const prettyPrice = order.price.toLocaleString({
-        ( 'en-USD', { 
-            style: ‘currency’, 
-            currency: ‘USD’
-    })
+    const totalPrice = cartObject.quantity * sneaker.price;
+    const prettyPrice = makePrettyCurrency(sneaker.price);
+    const prettyTotal = makePrettyCurrency(totalPrice);
 
-    const totalPrice = order.quantity * fruit.price;
-    const prettyTotal = makePrettyCurrency.toLocaleString
-    ( 'en-USD', { 
-        style: ‘currency’, 
-        currency: ‘USD’
-});
-    
-    const columnfour = makeTd('');
+    const columnOne = makeTd(sneaker.name);
+    const columnTwo = makeTd(cartObject.quantity);
+    const columnThree = makeTd(prettyPrice);
+    const columnFour = makeTd(prettyTotal);
 
     tableRow.appendChild(columnOne);
     tableRow.appendChild(columnTwo);
-    tableRow.appendChild(columnthree);
-    tableRow.appendChild(columnOne);
+    tableRow.appendChild(columnThree);
+    tableRow.appendChild(columnFour);
 
-const columnOne = document.createElement('td');
-columnOne.textContent = 'apple';
-const columnOne = document.createElement('td');
-columnOne.textContent = '4';
-const columnTwo = document.createElement('td');
-columnTwo.textContent = '1.00';
-const columnThree = document.createElement('td');
-columnThree.textContent = '4.00';
-
-// //write this first
-// const tableRow = document.createElement('tr');
-// const columnOne = document.createElement('td');
-// columnOne.textContent = 'apple';
-// const columnOne = document.createElement('td');
-// columnOne.textContent = '4';
-// const columnTwo = document.createElement('td');
-// columnTwo.textContent = '1.00';
-// const columnThree = document.createElement('td');
-// columnThree.textContent = '4.00';
-
-
-return {
-    outerHTML: 'someString' {}
-
-}
-
-
-
-
-export const cartTotal = (fruits, cart) => {
-
+    return tableRow;
 }
